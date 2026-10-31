@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartLock | Admin Activity History</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/admin_history.css') }}">
+</head>
+<body>
+
+<div class="history-container">
+
+    <header>
+        <div>
+            <h1>Admin Activity History</h1>
+            <p>Monitor changes made in the SmartLock system.</p>
+        </div>
+
+        <a href="/" class="back-button">Dashboard</a>
+    </header>
+
+    <section class="summary">
+        <div class="summary-card">
+            <h3>Total Activities</h3>
+            <p id="totalActivities">0</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>Latest Activity</h3>
+            <p id="latestActivity">--</p>
+        </div>
+    </section>
+
+    <section class="history-section">
+
+        <div class="history-heading">
+            <h2>Activity Records</h2>
+
+            <button id="refreshButton">Refresh</button>
+        </div>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search activities..."
+        >
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Admin</th>
+                        <th>Action</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+
+                <tbody id="historyTable">
+                    <tr>
+                        <td colspan="4">Loading activity records...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p id="historyMessage"></p>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='js/admin_history.js') }}"></script>
+
+</body>
+</html>
