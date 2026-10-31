@@ -1,0 +1,138 @@
+
+{% extends "base.html" %}
+
+{% block title %}Students | SmartLock{% endblock %}
+
+{% block page_heading %}Student Management{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/students.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Heading -->
+<div class="student-heading">
+    <div>
+        <h2>Student Management</h2>
+        <p>Register and manage student information.</p>
+    </div>
+
+    <button class="add-student-btn" id="openModal">
+        + Add Student
+    </button>
+</div>
+
+
+<!-- Statistics -->
+<div class="student-stats">
+
+    <div class="student-stat-card">
+        <p>Total Students</p>
+        <h2 id="totalCount">5</h2>
+    </div>
+
+    <div class="student-stat-card">
+        <p>Active Students</p>
+        <h2 id="activeCount">4</h2>
+    </div>
+
+    <div class="student-stat-card">
+        <p>Inactive Students</p>
+        <h2 id="inactiveCount">1</h2>
+    </div>
+
+</div>
+
+
+<!-- Search -->
+<div class="student-table-panel">
+
+    <div class="table-heading">
+        <h3>Registered Students</h3>
+
+        <input
+            type="text"
+            id="searchStudent"
+            placeholder="Search by name or roll number..."
+        >
+    </div>
+
+
+    <!-- Student Table -->
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Roll Number</th>
+                    <th>Email</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="studentTableBody">
+                <!-- JavaScript inserts student records here -->
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <p id="emptyMessage" class="empty-message">
+        No students found.
+    </p>
+
+</div>
+
+
+<!-- Add Student Modal -->
+<div class="modal" id="studentModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <h3>Add New Student</h3>
+
+            <button type="button" id="closeModal" class="close-btn">
+                &times;
+            </button>
+        </div>
+
+        <form id="studentForm">
+
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName" required>
+
+            <label for="studentRoll">Roll Number</label>
+            <input type="text" id="studentRoll" required>
+
+            <label for="studentEmail">Email Address</label>
+            <input type="email" id="studentEmail" required>
+
+            <label for="studentStatus">Status</label>
+            <select id="studentStatus">
+                <option value="Active">Active</option>
+                <option value="Inactive">Inactive</option>
+            </select>
+
+            <button type="submit" class="save-btn">
+                Register Student
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/students.js') }}"></script>
+{% endblock %}

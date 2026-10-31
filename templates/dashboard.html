@@ -1,0 +1,139 @@
+
+{% extends "base.html" %}
+
+{% block title %}Dashboard | SmartLock{% endblock %}
+
+{% block page_heading %}Dashboard{% endblock %}
+
+{% block content %}
+
+<!-- Welcome Section -->
+<div class="welcome-section">
+    <h2>Welcome to SmartLock!</h2>
+    <p>Monitor and manage your smart access control system.</p>
+</div>
+
+<!-- Statistics Cards -->
+<div class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-icon blue">👥</div>
+        <p>Total Students</p>
+        <h2 id="totalStudents">250</h2>
+        <span>Registered students</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon green">🚪</div>
+        <p>Total Rooms</p>
+        <h2 id="totalRooms">18</h2>
+        <span>Registered rooms</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon purple">🔓</div>
+        <p>Successful Entries</p>
+        <h2 id="successfulEntries">120</h2>
+        <span>Sample access count</span>
+    </div>
+
+    <div class="stat-card">
+        <div class="stat-icon orange">🛡️</div>
+        <p>Rejected Attempts</p>
+        <h2 id="rejectedAttempts">8</h2>
+        <span>Sample access count</span>
+    </div>
+
+</div>
+
+
+<!-- Dashboard Lower Section -->
+<div class="dashboard-grid">
+
+    <!-- Recent Access Activity -->
+    <div class="dashboard-panel">
+
+        <div class="panel-header">
+            <h3>Recent Access Activity</h3>
+            <a href="/access-logs">View All</a>
+        </div>
+
+        <div class="table-container">
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Room</th>
+                        <th>Method</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="recentActivity">
+
+                    <tr>
+                        <td>Rahul Das</td>
+                        <td>Room 101</td>
+                        <td>RFID</td>
+                        <td><span class="status success">Granted</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Priya Roy</td>
+                        <td>Room 102</td>
+                        <td>Face</td>
+                        <td><span class="status success">Granted</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Amit Sen</td>
+                        <td>Room 103</td>
+                        <td>Fingerprint</td>
+                        <td><span class="status danger">Denied</span></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+
+    <!-- Device Status -->
+    <div class="dashboard-panel">
+
+        <div class="panel-header">
+            <h3>Device Status</h3>
+        </div>
+
+        <div class="device-item">
+            <div>
+                <strong>Room 101</strong>
+                <p>ESP32 Controller</p>
+            </div>
+            <span class="status success">Online</span>
+        </div>
+
+        <div class="device-item">
+            <div>
+                <strong>Room 102</strong>
+                <p>ESP32 Controller</p>
+            </div>
+            <span class="status success">Online</span>
+        </div>
+
+        <div class="device-item">
+            <div>
+                <strong>Room 103</strong>
+                <p>ESP32 Controller</p>
+            </div>
+            <span class="status danger">Offline</span>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

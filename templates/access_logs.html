@@ -1,0 +1,82 @@
+
+{% extends "base.html" %}
+
+{% block title %}Access Logs | SmartLock{% endblock %}
+{% block page_heading %}Access Logs{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/access_logs.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="logs-heading">
+    <div>
+        <h2>Access Logs</h2>
+        <p>Monitor and review room access activity.</p>
+    </div>
+</div>
+
+<div class="logs-stats">
+    <div class="logs-stat-card">
+        <p>Total Attempts</p>
+        <h2 id="totalAttempts">5</h2>
+    </div>
+
+    <div class="logs-stat-card">
+        <p>Granted Access</p>
+        <h2 id="grantedAttempts">3</h2>
+    </div>
+
+    <div class="logs-stat-card">
+        <p>Denied Access</p>
+        <h2 id="deniedAttempts">2</h2>
+    </div>
+</div>
+
+<div class="logs-panel">
+
+    <div class="logs-table-heading">
+        <h3>Recent Access Activity</h3>
+        <input type="text" id="searchLogs"
+               placeholder="Search student, room or roll...">
+    </div>
+
+    <div class="logs-filters">
+        <label for="statusFilter">Filter by status:</label>
+
+        <select id="statusFilter">
+            <option value="All">All Attempts</option>
+            <option value="Granted">Granted</option>
+            <option value="Denied">Denied</option>
+        </select>
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Roll Number</th>
+                    <th>Room</th>
+                    <th>Date & Time</th>
+                    <th>Authentication</th>
+                    <th>Result</th>
+                </tr>
+            </thead>
+
+            <tbody id="logsTableBody"></tbody>
+        </table>
+    </div>
+
+    <p id="logsEmptyMessage" class="empty-message">
+        No access records found.
+    </p>
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/access_logs.js') }}"></script>
+{% endblock %}

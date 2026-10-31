@@ -1,0 +1,112 @@
+
+{% extends "base.html" %}
+
+{% block title %}Allocations | SmartLock{% endblock %}
+{% block page_heading %}Room Allocations{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/allocations.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="allocation-heading">
+    <div>
+        <h2>Room Allocations</h2>
+        <p>Assign students to rooms and manage their allocations.</p>
+    </div>
+    <button class="add-allocation-btn" id="openAllocationModal">
+        + New Allocation
+    </button>
+</div>
+
+<div class="allocation-stats">
+    <div class="allocation-stat-card">
+        <p>Total Allocations</p>
+        <h2 id="totalAllocations">4</h2>
+    </div>
+
+    <div class="allocation-stat-card">
+        <p>Active Allocations</p>
+        <h2 id="activeAllocations">3</h2>
+    </div>
+
+    <div class="allocation-stat-card">
+        <p>Available Rooms</p>
+        <h2 id="availableAllocationRooms">2</h2>
+    </div>
+</div>
+
+<div class="allocation-panel">
+    <div class="allocation-table-heading">
+        <h3>Allocation Records</h3>
+        <input type="text" id="searchAllocation"
+               placeholder="Search student or room...">
+    </div>
+
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Roll Number</th>
+                    <th>Room Number</th>
+                    <th>Building</th>
+                    <th>Allocation Date</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="allocationTableBody"></tbody>
+        </table>
+    </div>
+
+    <p id="allocationEmptyMessage" class="empty-message">
+        No allocations found.
+    </p>
+</div>
+
+<!-- Allocation Modal -->
+<div class="allocation-modal" id="allocationModal">
+    <div class="allocation-modal-content">
+
+        <div class="allocation-modal-header">
+            <h3 id="allocationModalTitle">New Allocation</h3>
+            <button type="button" id="closeAllocationModal"
+                    class="close-allocation-btn">&times;</button>
+        </div>
+
+        <form id="allocationForm">
+
+            <label for="allocationStudent">Student Name</label>
+            <input type="text" id="allocationStudent"
+                   placeholder="Enter student name" required>
+
+            <label for="allocationRoll">Roll Number</label>
+            <input type="text" id="allocationRoll"
+                   placeholder="Enter roll number" required>
+
+            <label for="allocationRoom">Room Number</label>
+            <input type="text" id="allocationRoom"
+                   placeholder="Enter room number" required>
+
+            <label for="allocationBuilding">Building</label>
+            <input type="text" id="allocationBuilding"
+                   placeholder="Enter building name" required>
+
+            <label for="allocationDate">Allocation Date</label>
+            <input type="date" id="allocationDate" required>
+
+            <button type="submit" class="save-allocation-btn">
+                Save Allocation
+            </button>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/allocations.js') }}"></script>
+{% endblock %}

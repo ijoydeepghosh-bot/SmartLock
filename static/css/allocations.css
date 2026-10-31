@@ -1,0 +1,197 @@
+
+.allocation-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.allocation-heading h2 {
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.allocation-heading p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.add-allocation-btn,
+.save-allocation-btn {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.allocation-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.allocation-stat-card,
+.allocation-panel {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.allocation-stat-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.allocation-stat-card h2 {
+    margin-top: 10px;
+    font-size: 27px;
+    color: #1e293b;
+}
+
+.allocation-table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.allocation-table-heading input {
+    width: 260px;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+}
+
+.allocation-panel table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+}
+
+.allocation-panel th,
+.allocation-panel td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+}
+
+.allocation-panel th {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.allocation-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.allocation-status.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.allocation-status.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.allocation-action-btn {
+    border: none;
+    padding: 6px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-allocation {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.empty-message {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
+
+.allocation-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.55);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 15px;
+}
+
+.allocation-modal-content {
+    background: white;
+    width: 100%;
+    max-width: 430px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.allocation-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.close-allocation-btn {
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.allocation-modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.allocation-modal form input {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.save-allocation-btn {
+    margin-top: 10px;
+}
+
+@media (max-width: 700px) {
+    .allocation-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .allocation-heading,
+    .allocation-table-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .allocation-table-heading input {
+        width: 100%;
+    }
+}

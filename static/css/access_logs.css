@@ -1,0 +1,134 @@
+
+.logs-heading {
+    margin-bottom: 25px;
+}
+
+.logs-heading h2 {
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+
+.logs-heading p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.logs-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.logs-stat-card,
+.logs-panel {
+    background: white;
+    padding: 22px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.logs-stat-card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.logs-stat-card h2 {
+    color: #1e293b;
+    font-size: 27px;
+    margin-top: 10px;
+}
+
+.logs-table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.logs-table-heading input {
+    width: 270px;
+    max-width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+}
+
+.logs-filters {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    color: #475569;
+    font-size: 14px;
+}
+
+.logs-filters select {
+    padding: 9px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.logs-panel table {
+    width: 100%;
+    min-width: 750px;
+    border-collapse: collapse;
+}
+
+.logs-panel th,
+.logs-panel td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 13px;
+}
+
+.logs-panel th {
+    background: #f8fafc;
+    color: #475569;
+}
+
+.access-result {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.access-result.granted {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.access-result.denied {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.empty-message {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+}
+
+@media (max-width: 700px) {
+    .logs-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .logs-table-heading {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .logs-table-heading input {
+        width: 100%;
+    }
+}
